@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('woff2');
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
