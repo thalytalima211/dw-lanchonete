@@ -1,13 +1,8 @@
-# 2️Cardápio de Lanchonete
+# Cardápio de Lanchonete
 
 ## 📋 Descrição
 
 Projeto de cardápio digital para lanchonete com lista interativa de produtos, desenvolvido para a disciplina de Design Web. O sistema permite visualizar produtos com nome, descrição, preço e imagem, além de detalhar cada item individualmente. Possui recursos extras como filtro por categoria e busca para facilitar a navegação.
-
----
-
-## 🚩 Páginas obrigatórias
-
 
 ---
 
