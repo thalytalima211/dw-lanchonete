@@ -17,6 +17,29 @@ export default function NewProduct({setNewProductModal}){
         setFormData(prev => ({ ...prev, [field]: value }));
     }
 
+    const handleSave = () => {
+        if (!formData.name || !formData.description || !formData.category || !formData.price || !formData.image) {
+            alert('Preencha todos os campos obrigatórios!');
+            return;
+        }
+
+        const newProduct = {
+            id: Date.now(),
+            name: formData.name,
+            description: formData.description,
+            category: formData.category,
+            price: formData.price,
+            image: URL.createObjectURL(formData.image)
+        };
+        
+        const existingProducts = JSON.parse(localStorage.getItem('products')) || [];
+        existingProducts.push(newProduct);
+        localStorage.setItem('products', JSON.stringify(existingProducts));
+        console.log("Produto cadastrado com sucesso!");
+        setNewProductModal(false);
+    };
+
+
     return(
         <PopUp>
             <div className="flex justify-end w-full">
@@ -53,7 +76,7 @@ export default function NewProduct({setNewProductModal}){
                 <LabelInput label="Valor" required={true}
                     maxLength="100" value={formData.price} onChange={(e) => handleChange('price', maskField('money', e.target.value))}/>
             </div>
-            <button className='w-fit mx-auto bg-amber-900 hover:bg-amber-950 text-white p-3 px-6 mt-4 rounded-xl'>Salvar</button>
+            <button className='w-fit mx-auto bg-amber-900 hover:bg-amber-950 text-white p-3 px-6 mt-4 rounded-xl'  onClick={handleSave}>Salvar</button>
         </PopUp>
     )
 }
