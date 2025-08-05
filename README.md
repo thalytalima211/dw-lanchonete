@@ -1,12 +1,44 @@
-# React + Vite
+# 2️Cardápio de Lanchonete
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Descrição
 
-Currently, two official plugins are available:
+Projeto de cardápio digital para lanchonete com lista interativa de produtos, desenvolvido para a disciplina de Design Web. O sistema permite visualizar produtos com nome, descrição, preço e imagem, além de detalhar cada item individualmente. Possui recursos extras como filtro por categoria e busca para facilitar a navegação.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚩 Páginas obrigatórias
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+---
+
+## ✨ Funcionalidades
+
+* **Cardápio:** Exibe a lista de produtos com nome, descrição, preço e imagem.
+* **Detalhes do Produto:** Informações detalhadas sobre cada item do cardápio.
+
+---
+
+## ⚙️ Tecnologias utilizadas
+
+* React.js para construção da interface.
+* LocalStorage para armazenamento local dos produtos (sem backend).
+
+---
+
+## 👥 Equipe
+
+* Claudia Ferreira de Sousa
+* [Lais Carvalho Coutinho](https://github.com/laiscoutinho)
+* Rosana Celine Pinheiro Damaceno
+* Thaís Araújo de Paiva
+* Thalyta Lima Rodrigues
+* João Pedro Silva Fialho
+
+---
+
+## 🔍 Como executar
+
+1. Clone o repositório
+2. Rode `npm install` para instalar dependências
+3. Rode `npm run dev` para iniciar localmente
+4. Abra o navegador em `http://localhost:3000` para visualizar
