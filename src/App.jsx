@@ -5,10 +5,14 @@ import ProductList from "./components/ProductList";
 
 function App() {
   const [newProductModal, setNewProductModal] = useState(false);
-  const products = JSON.parse(localStorage.getItem("products")) || [];
+  const [products, setProducts] = useState(() => {
+    return JSON.parse(localStorage.getItem("products")) || [];
+  });
+  const atualizarProdutos = () => {
+    const produtosSalvos = JSON.parse(localStorage.getItem("products")) || [];
+    setProducts(produtosSalvos);
+  };
   console.log("📦 Produtos cadastrados:", products);
-  if (products.length > 0)
-    console.log("📦 EXEMPLO: Eu pego um certo dado assim: ", products[0].name);
 
   return (
     <main className="bg-amber-50 py-7 px-8 min-h-[100vh]">
@@ -23,10 +27,13 @@ function App() {
       </div>
 
       <div className="mt-10">
-        <ProductList />
+        <ProductList products={products}/>
       </div>
       {newProductModal && (
-        <NewProduct setNewProductModal={setNewProductModal} />
+        <NewProduct
+          setNewProductModal={setNewProductModal}
+          atualizarProdutos={atualizarProdutos}
+        />
       )}
     </main>
   );

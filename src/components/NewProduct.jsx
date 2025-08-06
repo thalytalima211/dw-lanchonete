@@ -4,7 +4,7 @@ import LabelInput from "./LabelInput/LabelInput";
 import { useState } from "react";
 import { maskField } from "./LabelInput/maskField";
 
-export default function NewProduct({ setNewProductModal }) {
+export default function NewProduct({ setNewProductModal, atualizarProdutos }) {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -48,6 +48,7 @@ export default function NewProduct({ setNewProductModal }) {
         existingProducts.push(newProduct);
         localStorage.setItem("products", JSON.stringify(existingProducts));
         console.log("Produto cadastrado com sucesso!");
+        atualizarProdutos()
         setNewProductModal(false);
       };
 
