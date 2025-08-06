@@ -1,19 +1,9 @@
 // src/components/ProductCard.jsx
 import React from "react";
-// recebe um prop (nome,descrição,preço,imagem)
-/** h3 nome do produto
- * <P> descrição do produto
- * <p2> exibe o preço do produto
- *
- * //componente funcional ProductCard
- * mostrar as informações de um produto
- * 
-
- * * */
 const ProductCard = ({ product }) => {
   return (
-    //div
-    <div className="border rounded-lg shadow-md p-4 max-w-sm bg-white">
+    
+    <div className="w-95 h-[300px] border rounded-lg shadow-md p-4 bg-white mx-auto flex flex-col justify-between">
       <img
         src={product.image}
         alt={product.name}
