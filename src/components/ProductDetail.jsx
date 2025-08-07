@@ -1,7 +1,7 @@
 import PopUp from "./PopUp/PopUp"
 import { X } from 'lucide-react'
 
-export default function ProductDetail({product, setProductDetail, handleDelete}){
+export default function ProductDetail({product, setProductDetail, handleDelete, view = 'private'}){
     return(
         <PopUp>
           <div className="flex justify-end w-full">
@@ -29,12 +29,13 @@ export default function ProductDetail({product, setProductDetail, handleDelete})
           <p>Tempo estimado de preparo: {product.preparation_time} min</p>
           <p>Valor calórico: {product.caloric_value} kcal</p>
 
+          {view === 'private' &&
           <button
                 className="w-fit transition transition-300 bg-amber-900 hover:bg-amber-950 text-white p-3 mx-auto rounded-xl"
                 onClick={() => handleDelete(product.id)}
             >
                 Excluir produto
-            </button>
+            </button>}
       </PopUp>
     )
 }

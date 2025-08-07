@@ -1,9 +1,11 @@
 // src/components/PublicMenu.jsx
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import ProductDetail from "./ProductDetail";
 
 function PublicMenu() {
   const [products, setProducts] = useState([]);
+ 	const [productDetail, setProductDetail] = useState(false)
   const [filter, setFilter] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -46,9 +48,11 @@ function PublicMenu() {
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} setProductDetail={() => {}} />
+          <ProductCard key={product.id} product={product} setProductDetail={setProductDetail} />
         ))}
       </div>
+      {productDetail && 
+              <ProductDetail product={productDetail} setProductDetail={setProductDetail} view="public"/>}
     </main>
   );
 }
