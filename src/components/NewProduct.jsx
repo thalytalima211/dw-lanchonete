@@ -11,6 +11,9 @@ export default function NewProduct({ setNewProductModal, atualizarProdutos }) {
     image: "",
     price: 0,
     category: "",
+    ingredients: "",
+    caloric_value: "",
+    preparation_time: ""
   });
 
   const handleChange = (field, value) => {
@@ -23,7 +26,10 @@ export default function NewProduct({ setNewProductModal, atualizarProdutos }) {
       !formData.description ||
       !formData.category ||
       !formData.price ||
-      !formData.image
+      !formData.image ||
+      !formData.ingredients ||
+      !formData.caloric_value ||
+      !formData.preparation_time
     ) {
       alert("Preencha todos os campos obrigatórios!");
       return;
@@ -41,6 +47,9 @@ export default function NewProduct({ setNewProductModal, atualizarProdutos }) {
           category: formData.category,
           price: formData.price,
           image: base64String,
+          ingredients: formData.ingredients,
+          caloric_value: formData.caloric_value,
+          preparation_time: formData.preparation_time,
         };
 
         const existingProducts =
@@ -61,6 +70,9 @@ export default function NewProduct({ setNewProductModal, atualizarProdutos }) {
         category: formData.category,
         price: formData.price,
         image: formData.image,
+        ingredients: formData.ingredients,
+        caloric_value: formData.caloric_value,
+        preparation_time: formData.preparation_time,
       };
 
       const existingProducts =
@@ -105,7 +117,7 @@ export default function NewProduct({ setNewProductModal, atualizarProdutos }) {
         </label>
         <input
           type="file"
-          accept=".jpg,.png"
+          accept=".jpg,.png,.jpeg"
           onChange={(e) => handleChange("image", e.target.files[0])}
           className="w-full rounded-lg text-sm font-normal bg-[#F7F7F7] 
                         border border-transparent shadow-md text-[#55618C]/60
@@ -136,6 +148,34 @@ export default function NewProduct({ setNewProductModal, atualizarProdutos }) {
           value={formData.price}
           onChange={(e) =>
             handleChange("price", maskField("money", e.target.value))
+          }
+        />
+        <LabelInput
+          label="Ingredientes"
+          required={true}
+          maxLength="500"
+          value={formData.ingredients}
+          type="mensagem"
+          onChange={(e) =>
+            handleChange("ingredients", e.target.value)
+          }
+        />
+        <LabelInput
+          label="Valor Calórico (em kcal)"
+          required={true}
+          type="number"
+          value={formData.caloric_value}
+          onChange={(e) =>
+            handleChange("caloric_value", e.target.value)
+          }
+        />
+        <LabelInput
+          label="Tempo Estimado de Preparo (em min)"
+          required={true}
+          type="number"
+          value={formData.preparation_time}
+          onChange={(e) =>
+            handleChange("preparation_time", e.target.value)
           }
         />
       </div>
