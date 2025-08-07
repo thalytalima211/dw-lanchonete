@@ -39,13 +39,23 @@ function App() {
 			</div>
 
 			<div className="flex flex-row justify-evenly mt-4">
-				<input className="border rounded-lg w-100 p-3" placeholder="Pesquisar produto" 
-				type="search" onChange={(e) => setFilter(e.target.value)}></input>
+				<input
+					type="search"
+					placeholder="Pesquisar produto"
+					onChange={(e) => setFilter(e.target.value)}
+					className="border rounded-lg w-100 p-3 outline-none transition duration-200
+								focus:ring-2 focus:ring-amber-800
+								hover:border-amber-700
+								active:ring-2 active:ring-amber-900"
+				/>
 				
 				<select
-					className="border rounded-lg p-3"
 					value={selectedCategory}
 					onChange={(e) => setSelectedCategory(e.target.value)}
+					className="border rounded-lg p-3 outline-none transition duration-200
+								focus:ring-2 focus:ring-amber-800
+								hover:border-amber-700
+								active:ring-2 active:ring-amber-900"
 				>
 					<option value="">Todas as categorias</option>
 					<option value="Lanches">Lanches</option>
