@@ -1,7 +1,7 @@
 const ProductCard = ({ product, setProductDetail }) => {
   return (
     
-    <div className="h-fit border rounded-lg shadow-md p-4 bg-white mx-auto flex flex-col justify-between cursor-pointer transition transition-300 hover:scale-102"
+    <div className="h-full w-full border rounded-lg shadow-md p-4 bg-white mx-auto flex flex-col justify-between cursor-pointer transition transition-300 hover:scale-102"
     onClick={() => setProductDetail(product)}>
       <img
         src={product.image}
