@@ -8,3 +8,31 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.responsive-title {
+  font-size: 2.5rem; /* 40px */
+  transition: font-size 0.3s ease, opacity 0.3s ease;
+}
+
+/* Começa a diminuir a fonte a partir de 1400px */
+@media (max-width: 1460px) {
+  .responsive-title {
+    font-size: 1.8rem; /* 28.8px */
+  }
+}
+
+/* Diminui mais a partir de 1200px */
+@media (max-width: 1242px) {
+  .responsive-title {
+    font-size: 1.4rem; /* 22.4px */
+  }
+}
+
+/* Desaparece totalmente abaixo de 1024px */
+@media (max-width: 1110px) {
+  .responsive-title {
+    opacity: 0;
+    font-size: 0;
+    pointer-events: none;
+  }
+}
