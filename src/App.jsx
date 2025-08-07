@@ -11,6 +11,7 @@ function App() {
 		return JSON.parse(localStorage.getItem("products")) || [];
 	});
 	const [filter, setFilter] = useState('');
+	const [selectedCategory, setSelectedCategory] = useState('');
 
 	const atualizarProdutos = () => {
 		const produtosSalvos = JSON.parse(localStorage.getItem("products")) || [];
@@ -41,13 +42,23 @@ function App() {
 				<input className="border rounded-lg w-100 p-3" placeholder="Pesquisar produto" 
 				type="search" onChange={(e) => setFilter(e.target.value)}></input>
 				
-				/** filtros aqui */
+				<select
+					className="border rounded-lg p-3"
+					value={selectedCategory}
+					onChange={(e) => setSelectedCategory(e.target.value)}
+				>
+					<option value="">Todas as categorias</option>
+					<option value="Lanches">Lanches</option>
+					<option value="Bebidas">Bebidas</option>
+					<option value="Acompanhamentos">Acompanhamentos</option>
+					<option value="Doces">Doces</option>
+				</select>
 			</div>
 			
 			<div className="mt-10">
 				{products.length === 0 
 				? <p className="text-center">Sem produtos cadastrados! Cadastre um novo produto para continuar</p>
-				: <ProductList products={products} filter={filter} setProductDetail={setProductDetail}/>}
+				: <ProductList products={products} filter={filter} selectedCategory={selectedCategory} setProductDetail={setProductDetail}/>}
 			</div>
 			{newProductModal && (
 				<NewProduct
