@@ -76,7 +76,7 @@ function App() {
         </button>
 
         <nav className="hidden md:flex gap-10 font-semibold text-amber-900">
-          {["sobre", "cadastro", "cardapio", "calendario"].map((section) => (
+          {["sobre", "cadastro", "cardápio", "calendário"].map((section) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}
